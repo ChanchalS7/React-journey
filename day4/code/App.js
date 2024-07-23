@@ -1,9 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import foodFireLogo from "../../public/images/foodFireLogo.png"
-import { IMG_CDN_URL } from "../../public/common/constants";
-import { IMG_CDN_URL } from './../../public/common/constants';
-
 /*
 My food app structure will look like this
 1) Header
@@ -23,15 +20,12 @@ My food app structure will look like this
 		-copyrights
 
 */
-
 //Title component for display logo
 const Title = () => (
 	<a href="/">
 		<img className="logo" src={foodFireLogo} alt="Food fire logo" />
 	</a>
 )
-
-
 //Header component for header section logo, Nav Items
 const Header = () => {
 	return (
@@ -1870,12 +1864,11 @@ const restaurantList = [
 	},
 ];
 
-
 //Restaurant card component : Image, name, component
 const RestaurantCard = ({ cloudinaryImageId, name, cuisines, area, lastMileTravelString, costForTwoString, avgRating }) => {
 	return (
 		<div className="card">
-			<img src={IMG_CDN_URL + cloudinaryImageId} />
+			<img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId} />
 			<h2>{name}</h2>
 			<h4>{cuisines.join(", ")}</h4>
 			<h4>{area}</h4>
