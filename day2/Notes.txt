@@ -1,0 +1,6 @@
+#Want to minify our code, this code is not optimize, to make your app ready to go into production,you need to do a lot of things, compressing, minfying, optimize images and lot more.
+
+# So what is need to make your app into production.
+
+
+##caret(^) and tilde(~)

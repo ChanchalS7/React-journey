@@ -1,0 +1,2 @@
+Install parcel : npm install -D parcel 
+Execute parcel : npx parcel index.html 
