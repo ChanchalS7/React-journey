@@ -1,0 +1,14 @@
+Make app interactive :
+
+
+How do I do that ? On clicking over the button I should only be able to see high rating restaurant.
+
+By Using Hooks
+
+
+Whenever we have react  -
+
+React algorithm - react uses Reconciliation algorithm also known as React fiber(In React16 version).
+
+Restaurant container is having 15 card(restaurant) => around 15 cards now suppose my UI changes to  filtering the 7 cards to only 3 filtered cards,
+React create the VDOM of the UI
