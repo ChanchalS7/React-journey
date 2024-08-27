@@ -6,6 +6,7 @@ const Title = () => (
 )
 //Header component for header section logo, Nav Items
 const Header = () => {
+	const betnName = "Login"
 	return (
 		<div className="header">
 			<Title />
@@ -17,6 +18,7 @@ const Header = () => {
 					<li>
 						<i class="fa-solid fa-cart-shopping"></i>
 					</li>
+					<button className="login">{betnName}</button>
 				</ul>
 			</div>
 		</div>
