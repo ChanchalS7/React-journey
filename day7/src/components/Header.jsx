@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import foodFireLogo from "../../../public/images/foodFireLogo.png"
 const Title = () => (
 	<a href="/">
@@ -8,7 +8,11 @@ const Title = () => (
 //Header component for header section logo, Nav Items
 const Header = () => {
 	const [btnName, setBtnName] = useState("Login")
+	console.log("header render")
 	// console.log("Header rendered")
+	useEffect(() => {
+		console.log("useEffect called")
+	}, [btnName])
 	return (
 		<div className="header">
 			<Title />
