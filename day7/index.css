@@ -114,7 +114,7 @@ color: rgb(203,54,0);
 padding: 10px;
 cursor: pointer;
 }
-.shimmer-conatainer{
+/* .shimmer-conatainer{
 display: flex;
 flex-wrap: wrap;
 }
@@ -124,7 +124,7 @@ height: 400px;
 margin: 20px;
 background-color: rgb(251, 251, 251);
 display: flex;
-}
+} */
 .login {
 margin: 0 20px;
 padding: 0 20px;
@@ -133,4 +133,37 @@ cursor: pointer;
 .filter {
 display: flex;
 
+}
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px;
+}
+
+.shimmer-card {
+  width: 200px;
+  height: 350px;
+  background: #f6f7f8;
+  background-image: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  border-radius: 8px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
