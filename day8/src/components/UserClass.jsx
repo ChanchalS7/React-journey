@@ -6,24 +6,43 @@ class UserCalss extends React.Component {
 	constructor(props) {
 		super(props);
 		// console.log("class-props:", props)
+		// this.state = {
+		// 	count: 0,
+		// 	count2: 2
+		// }
+		// console.log(this.props.name + " child constructor")
 		this.state = {
-			count: 0,
-			count2: 2
+			userInfo: {
+				name: "Dummy",
+				location: "Default",
+				avatar_url: ""
+			}
 		}
-		console.log(this.props.name + " child constructor")
 	}
-	componentDidMount() {
-		console.log(this.props.name + " Child Component Did Mount ")
+	async componentDidMount() {
+		// console.log(this.props.name + " Child Component Did Mount ")
 		//MAKE API CALLS
+		const data = await fetch("https://api.github.com/users/ChanchalS7")
+		const json = await data.json();
+		console.log("data:", json)
+		this.setState({ userInfo: json })
+	}
+	componentDidUpdate() {
+		console.log("component did update")
+	}
+	componentWillUnmount() {
+		console.log("Component will unmount")
 	}
 	render() {
-		const { name } = this.props;
-		const { count, count2 } = this.state;
-		console.log(this.props.name + " child render")
+		// const { name } = this.props;
+		// const { count, count2 } = this.state;
+		// console.log(this.props.name + " child render")
+
+		const { name, location, avatar_url } = this.state.userInfo;
 		return (
 
 			<div className='user-card'>
-				<h2>Count = {this.state.count}</h2>
+				{/* <h2>Count = {this.state.count}</h2>
 				<h2>Count2={count2}</h2>
 				<button onClick={() => {
 
@@ -32,12 +51,17 @@ class UserCalss extends React.Component {
 						count: this.state.count + 1,
 						count2: this.state.count2 + 1,
 					})
-				}}>Count Increase</button>
+				}}>Count Increase</button> */}
 
-				<h1>{name}</h1>
+				{/* <h1>{name}</h1>
 				<h2>Location:Indore</h2>
 				<h3>Linkedin:linkedin.com/in/chanchals7</h3>
-				<h3>Twitter:Chanchal_S7</h3>
+				<h3>Twitter:Chanchal_S7</h3> */}
+
+				<h2>Name:{name}</h2>
+				<h3>Location:{location}</h3>
+				<img src={avatar_url} />
+
 			</div>
 
 		)
@@ -55,7 +79,6 @@ export default UserCalss
 - then render is called
 - then componentDidMount is called(used for making an api call)
 Why make api call inside the componentDidMount()?
-
 
 
 
@@ -90,3 +113,19 @@ Parent Component Did Mount
 */
 
 /** construct the component -> render the component->update the dom->componentDidMount called-> */
+
+
+/**
+
+*constructor(dummy)
+*Render(dummy)
+*<HTML Dummy></HTML>
+* Component Di Mount
+*<API Call></API>
+*<This.setState>
+*------UPDATE
+* render(api data)
+*<HTML(new API data)
+*ComponentDidUpdate
+*
+ */
