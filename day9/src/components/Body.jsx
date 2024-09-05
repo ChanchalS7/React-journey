@@ -2,6 +2,7 @@ import { RestaurantCard } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../Hooks/useOnlineStatus";
 //Body component for body section : It contain all restaurant cards
 // We are mapping restaurantList array and passing data to RestaurantCard component with  props with unique key as index
 const Body = () => {
@@ -21,7 +22,11 @@ const Body = () => {
 		setFilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 	}
 	//Whenever state variable update, react trigger a reconciliation cycle(re-renders) the component
-	console.log("re-rendering")
+	// console.log("re-rendering")
+	const onlineStatus = useOnlineStatus();
+	if (onlineStatus === false) {
+		return <h1>Looks like you're not connected with internet❌🛜🛜 <br /> Please check your 🛜🛜🛜internet connection</h1>
+	}
 	return (
 
 		listOfRestaurant.length === 0 ? <Shimmer /> : (
