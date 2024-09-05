@@ -17,7 +17,7 @@ class About extends React.Component {
 			<div>
 				<h1>Hello, I'm React Learner 🙏 ❤️</h1>
 				{/* <User name={"Chanchal V (function)"} /> */}
-				<UserClass name={"First"} />
+				{/* <UserClass name={"First"} /> */}
 				{/* <UserClass name={"Second"} />
 				<UserClass name={"Third"} /> */}
 			</div>

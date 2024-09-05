@@ -72,7 +72,6 @@ class UserCalss extends React.Component {
 	}
 
 }
-
 export default UserCalss
 //Never udpate states variable directly in class-component
 
@@ -120,7 +119,6 @@ Parent Component Did Mount
 
 
 /**
-
 *constructor(dummy)
 *Render(dummy)
 *<HTML Dummy></HTML>

@@ -26,9 +26,6 @@ class UserCalss extends React.Component {
 		const json = await data.json();
 		console.log("data:", json)
 		this.setState({ userInfo: json })
-		// this.timer = setInterval(() => {
-		// 	console.log("calling again and again-need cleanup")
-		// }, 1000)
 	}
 	componentDidUpdate() {
 		console.log("component did update")
