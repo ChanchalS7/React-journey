@@ -37,3 +37,15 @@ export const RestaurantCard = ({
 		</div>
 	);
 };
+
+export const withNewLabel = (RestaurantCard) => {
+	return (props) => {
+		return (
+			<div>
+				<labe className="absolute bg-black text-white m-2 p-2 rounded-lg">New</labe>
+				<RestaurantCard {...props} />
+			</div>
+
+		)
+	}
+	()
