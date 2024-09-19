@@ -1,4 +1,4 @@
-import { RestaurantCard } from "./RestaurantCard";
+import { RestaurantCard, withNewLabel } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -10,6 +10,9 @@ const Body = () => {
 	let [listOfRestaurant, setListOfRestaurant] = useState([])
 	let [filteredRestaurant, setFilteredRestaurant] = useState([])
 	const [searchText, setSearchText] = useState("")
+
+	const RestaurantCardNew = withNewLabel(RestaurantCard);
+	console.log("List:", listOfRestaurant)
 	useEffect(() => {
 		fetchData();
 	}, [])
@@ -63,7 +66,10 @@ const Body = () => {
 				</div>
 				<div className="flex flex-wrap">
 					{filteredRestaurant.map((restaurant) => {
-						return <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}><RestaurantCard  {...restaurant.info} /></Link>
+						return <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
+							{restaurant.info.isNewlyOnboarded ? (<RestaurantCardNew {...restaurant.info} />) : (< RestaurantCard  {...restaurant.info} />)}
+
+						</Link>
 					})}
 				</div>
 			</div>
