@@ -1,3 +1,3 @@
-super(props) ?
-why async before componentDidMount?
-why can't used async before useEffect callback ?
+1.super(props) ?
+2.why async before componentDidMount?
+3.why can't used async before useEffect callback ?
