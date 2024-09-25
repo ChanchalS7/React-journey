@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "",
+    "editor.fontFamily": "Consolas",
     "editor.fontSize": 20,
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,

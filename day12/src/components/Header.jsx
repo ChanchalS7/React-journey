@@ -3,6 +3,7 @@ import foodFireLogo from "../../../public/images/foodFireLogo.png"
 import { Link } from "react-router-dom";
 import useOnlineStatus from "./../Hooks/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import {useSelector} from "react-redux"
 const Title = () => (
 	<a href="/">
 		<img className="w-16" src={foodFireLogo} alt="Food fire logo" />
@@ -13,7 +14,11 @@ const Header = () => {
 	const [btnName, setBtnName] = useState("Login")
 	const onlineStatus = useOnlineStatus()
 
-	const {loggedInUser  } = useContext(UserContext)
+	const { loggedInUser } = useContext(UserContext)
+	
+	//Subscribing to the store using a Selector
+	  const cartItems = useSelector((store) => store.cart.items);
+	console.log("items:",cartItems)
 	return (
 		<div className="flex justify-between shadow-lg m-5 bg-pink-100 mb-2 sm:bg-yellow-50">
 			<Title />
@@ -24,8 +29,8 @@ const Header = () => {
 					<li className="px-4"><Link to="/about">About</Link></li>
 					<li className="px-4"><Link to="/contact">Contact</Link></li>
 					<li className="px-4"><Link to="/grocery">Grocery</Link></li>
-					<li className="px-4">
-						Cart
+					<li className="px-4 font-bold text-xl">
+						<Link to="/cart">Cart ({cartItems.length}Items)</Link>
 					</li>
 					<button className="login"
 						onClick={() => {
