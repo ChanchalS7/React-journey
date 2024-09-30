@@ -1,3 +1,20 @@
 1.super(props) ?
 2.why async before componentDidMount?
 3.why can't used async before useEffect callback ?
+
+
+-Types of testing(developer):
+1. Unit testing : you test your component in isolation.
+2. Integration testing : where multiple component interact or communicate.
+3. End to End testing(e2e): Simulating the flow of user across the application.(tools like cypress, puppeteer, selenium)
+
+
+# Setting up Testing in our app
+- Install react testing library
+- Install jest
+- Installed Babel dependency
+- Configure Babel 
+- Configure Parcel Config file to disable default babel transpilation
+- Jest configuration 
+- Jest npx jest --init 
+- Install jsdom library 
